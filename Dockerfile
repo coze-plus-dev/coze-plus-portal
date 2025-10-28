@@ -1,51 +1,60 @@
-# 第一阶段：构建文档
+# ========================================
+# Stage 1: Build VitePress documentation
+# ========================================
 FROM node:22-alpine AS builder
 
-# 指定构建过程中的工作目录
 WORKDIR /app
 
-# 复制 package 文件
+# 复制依赖配置文件
 COPY package*.json ./
 
 # 安装依赖
-RUN npm install
+RUN npm ci --only=production
 
 # 复制所有文档源文件
 COPY . .
 
-# 构建 VitePress 文档
+# 构建 VitePress 站点
+# 输出目录: .vitepress/dist
 RUN npm run docs:build
 
-# 第二阶段：使用 Alpine 基础镜像服务文档
+# ========================================
+# Stage 2: Nginx server for static files
+# ========================================
 FROM alpine:3.13
 
 WORKDIR /opt/application
 
-# 安装 Nginx
-RUN apk add --no-cache nginx
+# 安装 Nginx 和健康检查工具
+RUN apk add --no-cache nginx curl
 
-# 创建必要的目录
+# 创建 Nginx 运行时必需的目录
 RUN mkdir -p /run/nginx \
     && mkdir -p /var/log/nginx \
     && mkdir -p /var/lib/nginx/tmp \
-    && chown -R nginx:nginx /run/nginx /var/log/nginx /var/lib/nginx
+    && mkdir -p /usr/share/nginx/html \
+    && chown -R nginx:nginx /run/nginx /var/log/nginx /var/lib/nginx /usr/share/nginx/html
 
-# 复制构建好的文档到 Nginx
+# 复制 VitePress 构建产物到 Nginx 服务目录
+# VitePress 默认输出: .vitepress/dist
 COPY --from=builder /app/.vitepress/dist /usr/share/nginx/html
 
-# 复制 Nginx 配置
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# 复制 VitePress 优化的 Nginx 配置
+COPY nginx.conf /etc/nginx/http.d/default.conf
 
 # 复制启动脚本
 COPY run.sh /opt/application/
-
-USER root
-
-# 设置启动脚本执行权限
 RUN chmod +x /opt/application/run.sh
 
-# 暴露端口
+# 使用 root 用户运行（某些环境需要）
+USER root
+
+# 暴露 HTTP 端口
 EXPOSE 80
 
-# 使用启动脚本启动服务
-CMD /opt/application/run.sh
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost/ || exit 1
+
+# 启动 Nginx
+CMD ["/opt/application/run.sh"]
