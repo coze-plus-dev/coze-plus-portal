@@ -11,10 +11,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '服务方案', link: '/services' },
-      { text: '开发指南', link: '/guide/overview' },
-      { text: 'API 参考', link: '/api/' },
-      { text: '架构设计', link: '/architecture/' }
+      { text: '服务详情', link: '/services' },
+      { text: '技术文档', link: '/guide/overview' }
     ],
 
     sidebar: {
