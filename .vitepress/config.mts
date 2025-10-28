@@ -8,6 +8,23 @@ export default defineConfig({
   // Ignore dead links during build to allow localhost URLs and work-in-progress docs
   ignoreDeadLinks: true,
 
+  // 百度统计
+  head: [
+    [
+      'script',
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5b1e3eef9eaa41262b6e05e923d47fd1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ]
+  ],
+
   themeConfig: {
     logo: '/logo.png',
 
