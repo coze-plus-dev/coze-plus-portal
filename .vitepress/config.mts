@@ -120,7 +120,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the Apache 2.0 License.',
+      message: '飞视数字技术｜AI智能技术服务商',
       copyright: 'Copyright © 2025 Coze Plus Team'
     }
   }
