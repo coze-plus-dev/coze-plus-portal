@@ -24,6 +24,12 @@ WORKDIR /opt/application
 # 安装 Nginx
 RUN apk add --no-cache nginx
 
+# 创建必要的目录
+RUN mkdir -p /run/nginx \
+    && mkdir -p /var/log/nginx \
+    && mkdir -p /var/lib/nginx/tmp \
+    && chown -R nginx:nginx /run/nginx /var/log/nginx /var/lib/nginx
+
 # 复制构建好的文档到 Nginx
 COPY --from=builder /app/.vitepress/dist /usr/share/nginx/html
 
@@ -36,7 +42,7 @@ COPY run.sh /opt/application/
 USER root
 
 # 设置启动脚本执行权限
-RUN chmod -R 777 /opt/application/run.sh
+RUN chmod +x /opt/application/run.sh
 
 # 暴露端口
 EXPOSE 80
