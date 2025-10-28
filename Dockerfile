@@ -50,11 +50,11 @@ RUN chmod +x /opt/application/run.sh
 USER root
 
 # 暴露 HTTP 端口
-EXPOSE 80
+EXPOSE 8000
 
 # 健康检查
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost/ || exit 1
+    CMD curl -f http://localhost:8000/ || exit 1
 
 # 启动 Nginx
 CMD ["/opt/application/run.sh"]
