@@ -9,6 +9,8 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   themeConfig: {
+    logo: '/logo.png',
+
     nav: [
       { text: '首页', link: '/' },
       { text: '服务详情', link: '/services' },
