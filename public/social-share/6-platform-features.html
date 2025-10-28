@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 平台核心能力</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 46px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 46px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 23px;
+            color: #718096;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 18px;
+            padding: 26px 22px;
+            border-left: 5px solid #30cfd0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .feature-icon {
+            font-size: 42px;
+            margin-right: 12px;
+        }
+
+        .feature-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .feature-desc {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: auto;
+        }
+
+        .tag {
+            background: white;
+            color: #30cfd0;
+            padding: 6px 13px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 2px solid #30cfd0;
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 0;
+            padding-top: 22px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .bottom-item {
+            text-align: center;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 22px 14px;
+            border-radius: 14px;
+        }
+
+        .bottom-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .bottom-text {
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">Coze Plus</div>
+            <h1 class="title">全能 AI Agent 开发平台</h1>
+            <p class="subtitle">低代码 · 高性能 · 易扩展</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-header">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-title">智能体开发</div>
+                </div>
+                <div class="feature-desc">
+                    可视化设计界面，拖拽式构建 AI 智能体，支持多模型接入，快速实现复杂业务逻辑
+                </div>
+                <div class="feature-tags">
+                    <div class="tag">低代码</div>
+                    <div class="tag">多模型</div>
+                    <div class="tag">快速开发</div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-header">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">工作流引擎</div>
+                </div>
+                <div class="feature-desc">
+                    强大的工作流编排能力，支持 44+ 节点类型，实现复杂业务流程自动化
+                </div>
+                <div class="feature-tags">
+                    <div class="tag">可视化编排</div>
+                    <div class="tag">44+ 节点</div>
+                    <div class="tag">流程自动化</div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-header">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-title">知识库管理</div>
+                </div>
+                <div class="feature-desc">
+                    支持多种文档格式，智能分片和向量化，提供高效的语义检索能力
+                </div>
+                <div class="feature-tags">
+                    <div class="tag">多格式支持</div>
+                    <div class="tag">向量检索</div>
+                    <div class="tag">智能分片</div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-header">
+                    <div class="feature-icon">🔌</div>
+                    <div class="feature-title">插件生态</div>
+                </div>
+                <div class="feature-desc">
+                    开放的插件系统，支持自定义工具开发，轻松集成第三方服务和 API
+                </div>
+                <div class="feature-tags">
+                    <div class="tag">开放生态</div>
+                    <div class="tag">自定义工具</div>
+                    <div class="tag">第三方集成</div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-header">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-title">多渠道接入</div>
+                </div>
+                <div class="feature-desc">
+                    一键接入微信、企业微信、钉钉、飞书等主流平台，快速部署到各个渠道
+                </div>
+                <div class="feature-tags">
+                    <div class="tag">微信</div>
+                    <div class="tag">企业微信</div>
+                    <div class="tag">钉钉</div>
+                    <div class="tag">飞书</div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-header">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-title">企业级安全</div>
+                </div>
+                <div class="feature-desc">
+                    完善的权限管理、数据加密、审计日志，保障企业数据安全和合规性
+                </div>
+                <div class="feature-tags">
+                    <div class="tag">权限管理</div>
+                    <div class="tag">数据加密</div>
+                    <div class="tag">审计日志</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="bottom-item">
+                <div class="bottom-icon">☁️</div>
+                <div class="bottom-text">SaaS 云服务</div>
+            </div>
+            <div class="bottom-item">
+                <div class="bottom-icon">🏢</div>
+                <div class="bottom-text">私有化部署</div>
+            </div>
+            <div class="bottom-item">
+                <div class="bottom-icon">🎓</div>
+                <div class="bottom-text">技术培训</div>
+            </div>
+            <div class="bottom-item">
+                <div class="bottom-icon">🛠️</div>
+                <div class="bottom-text">定制开发</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

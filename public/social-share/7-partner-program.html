@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 合作伙伴计划</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 56px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: #718096;
+        }
+
+        .partners {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .partner {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .partner:hover {
+            border-color: #a8edea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 237, 234, 0.3);
+        }
+
+        .partner-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .partner-name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .partner-desc {
+            font-size: 18px;
+            color: #718096;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .partner-benefits {
+            list-style: none;
+            text-align: left;
+        }
+
+        .partner-benefits li {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .partner-benefits li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-size: 14px;
+        }
+
+        .values {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+
+        .values-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .value {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .value-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .value-text {
+            font-size: 20px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 25px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .footer-highlight {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 20px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">Coze Plus</div>
+            <h1 class="title">合作伙伴计划</h1>
+            <p class="subtitle">开放合作 · 共建生态</p>
+        </div>
+
+        <div class="partners">
+            <div class="partner">
+                <div class="partner-icon">🤝</div>
+                <div class="partner-name">渠道合作伙伴</div>
+                <div class="partner-desc">推广产品服务，共享商业价值</div>
+                <ul class="partner-benefits">
+                    <li>产品推广支持</li>
+                    <li>销售培训赋能</li>
+                    <li>优惠价格政策</li>
+                    <li>返利激励机制</li>
+                </ul>
+            </div>
+
+            <div class="partner">
+                <div class="partner-icon">💼</div>
+                <div class="partner-name">ISV 合作伙伴</div>
+                <div class="partner-desc">开发行业方案，联合市场拓展</div>
+                <ul class="partner-benefits">
+                    <li>行业方案开发</li>
+                    <li>技术支持保障</li>
+                    <li>联合营销推广</li>
+                    <li>客户资源共享</li>
+                </ul>
+            </div>
+
+            <div class="partner">
+                <div class="partner-icon">🔬</div>
+                <div class="partner-name">技术合作伙伴</div>
+                <div class="partner-desc">能力互补，联合研发创新</div>
+                <ul class="partner-benefits">
+                    <li>技术能力互补</li>
+                    <li>联合研发创新</li>
+                    <li>共同拓展市场</li>
+                    <li>生态共建共赢</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="values">
+            <div class="values-title">合作价值</div>
+            <div class="values-grid">
+                <div class="value">
+                    <div class="value-icon">📈</div>
+                    <div class="value-text">业务增长</div>
+                </div>
+                <div class="value">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-text">精准客户</div>
+                </div>
+                <div class="value">
+                    <div class="value-icon">💡</div>
+                    <div class="value-text">技术赋能</div>
+                </div>
+                <div class="value">
+                    <div class="value-icon">🌟</div>
+                    <div class="value-text">品牌提升</div>
+                </div>
+                <div class="value">
+                    <div class="value-icon">🔗</div>
+                    <div class="value-text">资源对接</div>
+                </div>
+                <div class="value">
+                    <div class="value-icon">🚀</div>
+                    <div class="value-text">快速发展</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-highlight">携手共赢，共创 AI 智能体新生态</div>
+            <p class="footer-text">诚邀系统集成商、咨询公司、行业解决方案提供商加入</p>
+        </div>
+    </div>
+</body>
+</html>

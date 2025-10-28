@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 为什么选择我们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 58px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 32px;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+
+        .slogan {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a202c;
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .advantage {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .advantage:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .advantage-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .advantage-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .advantage-items {
+            list-style: none;
+        }
+
+        .advantage-items li {
+            font-size: 20px;
+            color: #4a5568;
+            margin-bottom: 14px;
+            padding-left: 32px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .advantage-items li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: auto;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #718096;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .footer-text {
+            font-size: 24px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">Coze Plus</div>
+            <p class="tagline">专业的 AI 智能体解决方案提供商</p>
+            <h1 class="slogan">为什么选择我们</h1>
+        </div>
+
+        <div class="advantages">
+            <div class="advantage">
+                <div class="advantage-icon">✨</div>
+                <div class="advantage-title">技术领先</div>
+                <ul class="advantage-items">
+                    <li>基于 DDD 架构设计</li>
+                    <li>开源透明，安全可信</li>
+                    <li>支持私有化部署</li>
+                    <li>数据安全可控</li>
+                </ul>
+            </div>
+
+            <div class="advantage">
+                <div class="advantage-icon">🎯</div>
+                <div class="advantage-title">经验丰富</div>
+                <ul class="advantage-items">
+                    <li>服务 100+ 企业客户</li>
+                    <li>覆盖多个行业领域</li>
+                    <li>成功案例丰富</li>
+                    <li>经验可复制</li>
+                </ul>
+            </div>
+
+            <div class="advantage">
+                <div class="advantage-icon">💪</div>
+                <div class="advantage-title">专业团队</div>
+                <ul class="advantage-items">
+                    <li>来自知名互联网公司</li>
+                    <li>7x24 小时技术支持</li>
+                    <li>快速响应</li>
+                    <li>专业可靠</li>
+                </ul>
+            </div>
+
+            <div class="advantage">
+                <div class="advantage-icon">🚀</div>
+                <div class="advantage-title">持续创新</div>
+                <ul class="advantage-items">
+                    <li>每月发布新功能</li>
+                    <li>紧跟 AI 技术前沿</li>
+                    <li>活跃的开源社区</li>
+                    <li>持续功能迭代</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">企业客户</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">行业覆盖</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">7×24</div>
+                <div class="stat-label">技术支持</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">开源</div>
+                <div class="stat-label">透明可信</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">助力企业 AI 数字化转型，让智能体触手可及</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "coze-plus-docs",
+  "version": "1.0.0",
+  "description": "Coze Plus Documentation",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [
+    "documentation",
+    "vitepress"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 企业私有化部署</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 56px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: #718096;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .section {
+            background: linear-gradient(135deg, #fff5f7 0%, #fef5f8 100%);
+            border-radius: 20px;
+            padding: 35px;
+            border-left: 6px solid #f5576c;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #f5576c;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-icon {
+            font-size: 40px;
+            margin-right: 15px;
+        }
+
+        .section-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            color: #2d3748;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .item:before {
+            content: "●";
+            color: #f5576c;
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: auto;
+        }
+
+        .highlight {
+            text-align: center;
+            background: #f7fafc;
+            padding: 30px 20px;
+            border-radius: 15px;
+        }
+
+        .highlight-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-title {
+            font-size: 22px;
+            color: #2d3748;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .highlight-desc {
+            font-size: 16px;
+            color: #718096;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .footer-text {
+            font-size: 22px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">Coze Plus</div>
+            <h1 class="title">企业私有化部署</h1>
+            <p class="subtitle">数据安全可控 · 深度定制开发</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🚀</span>
+                    部署实施服务
+                </div>
+                <div class="section-items">
+                    <div class="item">服务器环境搭建</div>
+                    <div class="item">系统安装与调试</div>
+                    <div class="item">数据迁移与导入</div>
+                    <div class="item">性能优化与调优</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🛠️</span>
+                    技术支持服务
+                </div>
+                <div class="section-items">
+                    <div class="item">首年免费支持</div>
+                    <div class="item">7x24 应急响应</div>
+                    <div class="item">定期系统巡检</div>
+                    <div class="item">版本升级服务</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">📚</span>
+                    培训与运维服务
+                </div>
+                <div class="section-items">
+                    <div class="item">管理员培训</div>
+                    <div class="item">开发人员培训</div>
+                    <div class="item">运维托管服务</div>
+                    <div class="item">安全审计加固</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlights">
+            <div class="highlight">
+                <div class="highlight-icon">🔒</div>
+                <div class="highlight-title">数据安全</div>
+                <div class="highlight-desc">完全私有部署<br/>数据自主可控</div>
+            </div>
+            <div class="highlight">
+                <div class="highlight-icon">⚙️</div>
+                <div class="highlight-title">深度定制</div>
+                <div class="highlight-desc">满足特殊需求<br/>业务深度集成</div>
+            </div>
+            <div class="highlight">
+                <div class="highlight-icon">💪</div>
+                <div class="highlight-title">专业团队</div>
+                <div class="highlight-desc">资深技术专家<br/>全程护航保障</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">适合大型企业、政府机构、金融机构等对数据安全要求高的组织</p>
+        </div>
+    </div>
+</body>
+</html>

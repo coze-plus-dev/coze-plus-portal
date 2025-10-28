@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 社交分享图片预览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-preview {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card-preview iframe {
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            transform-origin: 0 0;
+            border: none;
+            pointer-events: none;
+        }
+
+        .card-info {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 16px;
+            color: #718096;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f7fafc;
+            color: #2d3748;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            background: #edf2f7;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            padding: 40px;
+            overflow: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 1080px;
+            width: 100%;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: white;
+            color: #2d3748;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: #f7fafc;
+        }
+
+        .modal iframe {
+            width: 100%;
+            height: 1080px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 社交分享图片预览</h1>
+            <p>点击预览大图 · 已移除所有价格信息</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-preview" onclick="openModal('1-saas-service.html')">
+                    <iframe src="1-saas-service.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">1. SaaS 云服务</div>
+                    <div class="card-desc">介绍三个版本的核心功能和特点，适合向中小企业推广云服务。</div>
+                    <div class="card-actions">
+                        <a href="1-saas-service.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('1-saas-service.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-preview" onclick="openModal('2-private-deployment.html')">
+                    <iframe src="2-private-deployment.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">2. 企业私有化部署</div>
+                    <div class="card-desc">展示部署实施、技术支持等服务，适合大型企业和政府机构。</div>
+                    <div class="card-actions">
+                        <a href="2-private-deployment.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('2-private-deployment.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-preview" onclick="openModal('3-training-consulting.html')">
+                    <iframe src="3-training-consulting.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">3. 技术培训与咨询</div>
+                    <div class="card-desc">介绍培训课程和咨询服务，适合希望自建 AI 团队的企业。</div>
+                    <div class="card-actions">
+                        <a href="3-training-consulting.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('3-training-consulting.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-preview" onclick="openModal('4-custom-development.html')">
+                    <iframe src="4-custom-development.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">4. 定制开发服务</div>
+                    <div class="card-desc">展示行业解决方案和项目流程，适合有特殊需求的企业。</div>
+                    <div class="card-actions">
+                        <a href="4-custom-development.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('4-custom-development.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-preview" onclick="openModal('5-why-choose-us.html')">
+                    <iframe src="5-why-choose-us.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">5. 为什么选择我们</div>
+                    <div class="card-desc">展示四大优势和关键数据，适合品牌宣传和建立信任。</div>
+                    <div class="card-actions">
+                        <a href="5-why-choose-us.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('5-why-choose-us.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-preview" onclick="openModal('6-platform-features.html')">
+                    <iframe src="6-platform-features.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">6. 平台核心能力</div>
+                    <div class="card-desc">介绍六大核心功能，适合技术决策者了解平台能力。</div>
+                    <div class="card-actions">
+                        <a href="6-platform-features.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('6-platform-features.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-preview" onclick="openModal('7-partner-program.html')">
+                    <iframe src="7-partner-program.html"></iframe>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">7. 合作伙伴计划</div>
+                    <div class="card-desc">介绍三种合作模式，适合招募合作伙伴和生态建设。</div>
+                    <div class="card-actions">
+                        <a href="7-partner-program.html" target="_blank" class="btn btn-primary">打开</a>
+                        <button onclick="openModal('7-partner-program.html')" class="btn btn-secondary">预览</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="README.md" class="footer-link">📖 使用说明</a>
+                <a href="#" onclick="alert('请先安装 puppeteer: npm install puppeteer')" class="footer-link">🖼️ 批量转换</a>
+                <a href="https://github.com/coze-plus-dev/coze-plus" target="_blank" class="footer-link">🔗 项目主页</a>
+            </div>
+            <p style="opacity: 0.8;">© 2025 Coze Plus. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <iframe id="modal-iframe" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal(file) {
+            const modal = document.getElementById('modal');
+            const iframe = document.getElementById('modal-iframe');
+            iframe.src = file;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            const iframe = document.getElementById('modal-iframe');
+            modal.classList.remove('active');
+            iframe.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // ESC 键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // 点击背景关闭模态框
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

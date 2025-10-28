@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 技术培训与咨询</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 56px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: #718096;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .course {
+            background: linear-gradient(135deg, #e8f8ff 0%, #f0fbff 100%);
+            border-radius: 20px;
+            padding: 35px 25px;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .course:hover {
+            border-color: #4facfe;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
+        }
+
+        .course-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .course-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .course-features {
+            list-style: none;
+        }
+
+        .course-features li {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .course-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4facfe;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: auto;
+        }
+
+        .value {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .value-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .value-desc {
+            font-size: 17px;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .footer-text {
+            font-size: 22px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">Coze Plus</div>
+            <h1 class="title">技术培训与咨询</h1>
+            <p class="subtitle">赋能团队 · 快速成长</p>
+        </div>
+
+        <div class="courses">
+            <div class="course">
+                <div class="course-icon">🎓</div>
+                <div class="course-name">AI 智能体<br/>开发培训</div>
+                <ul class="course-features">
+                    <li>智能体开发基础</li>
+                    <li>工作流设计实践</li>
+                    <li>知识库管理</li>
+                    <li>插件开发集成</li>
+                </ul>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">🏗️</div>
+                <div class="course-name">架构设计<br/>咨询服务</div>
+                <ul class="course-features">
+                    <li>系统架构评审</li>
+                    <li>性能优化方案</li>
+                    <li>安全架构咨询</li>
+                    <li>技术选型建议</li>
+                </ul>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">👥</div>
+                <div class="course-name">企业内训<br/>定制服务</div>
+                <ul class="course-features">
+                    <li>定制化培训内容</li>
+                    <li>团队协作实战</li>
+                    <li>项目实践指导</li>
+                    <li>长期技术支持</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="values">
+            <div class="value">
+                <div class="value-icon">💡</div>
+                <div class="value-title">快速提升</div>
+                <div class="value-desc">系统化培训体系<br/>加速团队成长</div>
+            </div>
+            <div class="value">
+                <div class="value-icon">💰</div>
+                <div class="value-title">降低成本</div>
+                <div class="value-desc">学习最佳实践<br/>避免常见陷阱</div>
+            </div>
+            <div class="value">
+                <div class="value-icon">🎯</div>
+                <div class="value-title">实战经验</div>
+                <div class="value-desc">真实项目案例<br/>即学即用</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">帮助企业快速掌握 AI 智能体核心技术，打造专业技术团队</p>
+        </div>
+    </div>
+</body>
+</html>

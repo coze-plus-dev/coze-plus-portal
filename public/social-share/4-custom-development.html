@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coze Plus - 定制开发服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            border-radius: 30px;
+            padding: 45px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .title {
+            font-size: 46px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #718096;
+        }
+
+        .solutions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .solution {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffaf0 100%);
+            border-radius: 16px;
+            padding: 22px 24px;
+            border-left: 5px solid #fa709a;
+        }
+
+        .solution-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fa709a;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .solution-icon {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+
+        .solution-items {
+            list-style: none;
+        }
+
+        .solution-items li {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 9px;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.3;
+        }
+
+        .solution-items li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #fa709a;
+            font-size: 12px;
+        }
+
+        .process {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 16px;
+            padding: 24px 28px;
+        }
+
+        .process-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 16px 12px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .step-number {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 auto 10px;
+        }
+
+        .step-name {
+            font-size: 17px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .footer-highlight {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fa709a;
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-size: 17px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">Coze Plus</div>
+            <h1 class="title">定制开发服务</h1>
+            <p class="subtitle">量身打造 · 完美适配业务需求</p>
+        </div>
+
+        <div class="solutions">
+            <div class="solution">
+                <div class="solution-title">
+                    <span class="solution-icon">🎯</span>
+                    行业解决方案
+                </div>
+                <ul class="solution-items">
+                    <li>智能客服系统</li>
+                    <li>企业知识管理平台</li>
+                    <li>销售助手与 CRM 集成</li>
+                    <li>人力资源智能助手</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">
+                    <span class="solution-icon">🔗</span>
+                    系统集成服务
+                </div>
+                <ul class="solution-items">
+                    <li>第三方系统对接</li>
+                    <li>API 接口开发</li>
+                    <li>数据同步与迁移</li>
+                    <li>单点登录（SSO）集成</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">
+                    <span class="solution-icon">⚙️</span>
+                    功能定制开发
+                </div>
+                <ul class="solution-items">
+                    <li>专属 UI/UX 设计</li>
+                    <li>特殊业务流程实现</li>
+                    <li>高级数据分析功能</li>
+                    <li>多语言本地化</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">
+                    <span class="solution-icon">🛡️</span>
+                    安全与合规
+                </div>
+                <ul class="solution-items">
+                    <li>数据安全加密</li>
+                    <li>权限管理定制</li>
+                    <li>审计日志系统</li>
+                    <li>合规性改造</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="process">
+            <div class="process-title">标准项目流程</div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">需求分析</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">方案设计</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">开发实施</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">测试验收</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-name">上线部署</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-name">运维保障</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-highlight">敏捷开发 · 按里程碑交付</div>
+            <p class="footer-text">从需求分析到上线部署，全流程专业服务</p>
+        </div>
+    </div>
+</body>
+</html>

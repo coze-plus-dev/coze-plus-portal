@@ -1,0 +1,29 @@
+{
+  "name": "coze-plus-social-share-images",
+  "version": "1.0.0",
+  "description": "Coze Plus 社交平台分享图片生成工具",
+  "main": "convert-to-images.js",
+  "scripts": {
+    "convert": "node convert-to-images.js",
+    "convert:all": "node convert-to-images.js --all",
+    "convert:square": "node convert-to-images.js --size square",
+    "convert:vertical": "node convert-to-images.js --size vertical",
+    "convert:story": "node convert-to-images.js --size story",
+    "help": "node convert-to-images.js --help"
+  },
+  "keywords": [
+    "coze-plus",
+    "social-media",
+    "image-generation",
+    "html-to-image"
+  ],
+  "author": "Coze Plus Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "puppeteer": "^21.11.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
