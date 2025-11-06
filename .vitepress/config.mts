@@ -31,6 +31,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '服务详情', link: '/services' },
+      { text: '联系我们', link: '/contact' },
       { text: '技术文档', link: '/guide/overview' }
     ],
 
@@ -90,6 +91,14 @@ export default defineConfig({
           items: [
             { text: '模型技术架构', link: '/guide/model-architecture' },
             { text: '模型配置指南', link: '/guide/model-configuration' }
+          ]
+        },
+        {
+          text: '节点',
+          items: [
+            { text: '节点技术架构', link: '/guide/node-architecture' },
+            { text: '节点开发教程', link: '/guide/workflow-node-development' },
+            { text: '插件与节点集成', link: '/guide/plugin-node-integration' }
           ]
         },
         {
